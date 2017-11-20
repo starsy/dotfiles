@@ -37,6 +37,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-conflicted'
+Plugin 'Shougo/neocomplete'
+
+Bundle 'noah/vim256-color'
 
 
 " All of your Plugins must be added before the following line
@@ -73,6 +76,8 @@ if has('mouse')
   set mouse=a
 endif
 
+set t_Co=256
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -82,18 +87,16 @@ endif
 
 if !has("gui_running")
     set background=dark
-    set guifont=Powerline_Consolas:h14
-    set guifontwide=YaHei_Consolas_Hybrid:h14
     "let g:airline_powerline_fonts=1
     "let g:airline#extensions#tabline#left_sep = ' '
     "let g:airline#extensions#tabline#left_alt_sep = '|'
-    colo torte
+    colo molokai
 else
     set background=dark
-    set guifont=Powerline_Consolas:h14
-    set guifontwide=YaHei_Consolas_Hybrid:h14
+    set guifont=Powerline\ Consolas\ 13
+    set guifontwide=YaHei\ Consolas\ Hybrid\ 13
     let g:airline_powerline_fonts=1
-    colo torte
+    colo molokai
 endif
 
 
@@ -143,7 +146,6 @@ set ts=4
 set sw=4
 set expandtab
 autocmd BufNewFile,BufRead *.json set ft=javascript
-set t_Co=256
 set nu
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
